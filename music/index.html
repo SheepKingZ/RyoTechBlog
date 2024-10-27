@@ -5,7 +5,7 @@
   diytitle: {"enable":true,"leaveTitle":"RyoTech的博客","backTitle":"欢迎回来！"},
   LA51: undefined,
   greetingBox: undefined,
-  twikooEnvId: '',
+  twikooEnvId: 'https://ryotech.netlify.app/.netlify/functions/twikoo',
   commentBarrageConfig:undefined,
   root: '/',
   preloader: {"source":3},
@@ -316,8 +316,8 @@ queueMicrotask(() => {
   const getComment = () => {
     const runTwikoo = () => {
       twikoo.getRecentComments({
-        envId: '',
-        region: '',
+        envId: 'https://ryotech.netlify.app/.netlify/functions/twikoo',
+        region: 'ap-guangzhou',
         pageSize: 6,
         includeReply: true
       }).then(function (res) {

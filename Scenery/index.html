@@ -5,7 +5,7 @@
   diytitle: {"enable":true,"leaveTitle":"RyoTech的博客","backTitle":"欢迎回来！"},
   LA51: undefined,
   greetingBox: undefined,
-  twikooEnvId: '',
+  twikooEnvId: 'https://ryotech.netlify.app/.netlify/functions/twikoo',
   commentBarrageConfig:undefined,
   root: '/',
   preloader: {"source":3},
@@ -302,8 +302,8 @@ queueMicrotask(() => {
   const init = () => {
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
-      envId: '',
-      region: '',
+      envId: 'https://ryotech.netlify.app/.netlify/functions/twikoo',
+      region: 'ap-guangzhou',
       onCommentLoaded: () => {
         anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
       }
@@ -319,8 +319,8 @@ queueMicrotask(() => {
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
     twikoo.getCommentsCount({
-      envId: '',
-      region: '',
+      envId: 'https://ryotech.netlify.app/.netlify/functions/twikoo',
+      region: 'ap-guangzhou',
       urls: [window.location.pathname],
       includeReply: false
     }).then(res => {
@@ -335,8 +335,8 @@ queueMicrotask(() => {
     GLOBAL_CONFIG_SITE.isPost && getCount()
   }
 
-  if ('Twikoo' === 'Twikoo' || !false) {
-    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
     else {
       loadTwikoo()
     }
@@ -351,7 +351,7 @@ queueMicrotask(() => {
       pageview: false,
       dark: 'html[data-theme="dark"]',
       path: window.location.pathname,
-      comment: true,
+      comment: false,
     }, null))
   }
 
@@ -364,8 +364,8 @@ queueMicrotask(() => {
     }
   }
 
-  if ('Twikoo' === 'Waline' || !false) {
-    if (false) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  if ('Twikoo' === 'Waline' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
     else setTimeout(loadWaline, 0)
   } else {
     window.loadOtherComment = loadWaline
@@ -388,8 +388,8 @@ queueMicrotask(() => {
   const getComment = () => {
     const runTwikoo = () => {
       twikoo.getRecentComments({
-        envId: '',
-        region: '',
+        envId: 'https://ryotech.netlify.app/.netlify/functions/twikoo',
+        region: 'ap-guangzhou',
         pageSize: 6,
         includeReply: true
       }).then(function (res) {
